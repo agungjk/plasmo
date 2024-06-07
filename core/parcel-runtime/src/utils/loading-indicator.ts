@@ -11,8 +11,8 @@
 const LOADING_ID = "__plasmo-loading__"
 
 const trustedPolicy = typeof trustedTypes !== "undefined"
-  ? trustedTypes
-    .createPolicy(`trusted-html-${LOADING_ID}`, { createHTML: str => str })
+  // ? trustedTypes.createPolicy(`trusted-html-${LOADING_ID}`, { createHTML: str => str })
+  ? trustedTypes.createPolicy('dompurify', { createHTML: str => str })
   : undefined
 
 function getLoader() {
